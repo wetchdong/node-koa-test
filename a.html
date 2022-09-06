@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+
+const testFunc = (callback) => {
+    let result = 0
+    return new Promise((resolve) => {
+        resolve(1)
+    }).then(res => {
+        callback(res)
+        result = res
+    })
+}
+
+
+testFunc(function(a){
+    // console.log(a)
+})
+
+
+var p = new Promise((resolve, reject) => {
+    resolve(3) // 这里是一定会异步操作
+})
+
+p.then(v => console.log(v))
+p.then(v => console.log(v))
+p.then(v => console.log(v))
+console.log(4)
+
+
+
+</script>
